@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>html基础1</title>
+	<style>
+	.input,.output{
+		width: 90%;
+		height: 2em;
+		padding: 10px;
+		border:1px solid #0095dd;
+	}
+	.button{
+		padding: 10px 10px 10px 0px;
+	}
+	</style>
+</head>
+<body>
+	<h2>Input</h2>
+	<textarea name="" id="code"  class="input">This is my text.</textarea>
+	<h2>Output</h2>
+	<div class="output"></div>
+	<div class="controls">
+		<input type="button" id="reset" value="Reset">
+		<input type="button" id="solution" value="Show solution">
+		<input type="text" disabled="disabled">
+	</div>
+
+	<script>
+
+		var textarea=document.getElementById("code");
+		var reset=document.getElementById("reset");
+		var code=textarea.value;
+		var output=document.querySelector(".output");
+		var solution=document.getElementById("solution");
+		function drawOutput(){
+			output.innerHTML=textarea.value;
+		}
+
+		reset.addEventListener("click",function(){
+			textarea.value=code;
+			drawOutput();
+		});
+
+		solution.addEventListener("click",function(){
+			textarea.value="<em>This is my text.</em>";
+			drawOutput();
+		});
+		textarea.addEventListener("input",drawOutput);
+		window.addEventListener("load",drawOutput);
+	</script>
+    <p>你平时都是怎么学习的呢</p>
+    <a href="http://www.baidu.com" title="百度一下你就知道"><img src="./images/flower.jpg" style="height: 40px;width: 40px;"alt=""></a>
+   
+<a href="https://download.mozilla.org/?product=firefox-39.0-SSL&os=win&lang=en-US"
+   download="firefox-39-installer.exe">
+  Download Firefox 39 for Windows
+</a>
+<br/>
+<a href="mailto:741280427@qq.com">Send email to nowhere</a>
+
+<p>We use <abbr title="Hypertext Markup Language">HTML</abbr> to structure our web documents.</p>
+
+
+</body>
+</html>
